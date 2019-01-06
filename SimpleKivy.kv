@@ -16,83 +16,36 @@ ScreenManagement:
             pos: self.pos
             size: self.size
 	name:"main"
+	color: 0.596,0.9843,0.596,1
 	BoxLayout:
 		id: box
-        visible: False
-		opacity: 1 if self.visible else 0
 		size: root.size
 		
 		FloatLayout:
-			Button:
-				background_color: 1, 1, 1, 0.7
-				size_hint:0.2,1
-				pos_hint:{"left":1}
+		    Button:
+				text: "Strona\nGowna"
+				size_hint:0.34,0.06
+				pos_hint:{"x":0,"y":0}
+				on_release: app.root.current= "main"
+				background_color:root.color
 			Button:
 				text: "Mapa"
-				size_hint:0.2,0.1
-				pos_hint:{"left":1,"top":0.85}
+				size_hint:0.34,0.06
+				pos_hint:{"x":0.33,"y":0}
 				on_release: app.root.current= "mapa"
-				on_release:box.visible=False
-				on_release:box.disabled=True
-				on_release:menu.visible=True
-				on_release:menu.disabled=False
+				background_color:root.color
 			Button:
 				text: "Lista"
-				size_hint:0.2,0.1
-				pos_hint:{"left":1,"top":0.75}
+				size_hint:0.34,0.06
+				pos_hint:{"x":0.66,"y":0}
 				on_release: app.root.current= "lista"
-				on_release:box.visible=False
-				on_release:box.disabled=True
-				on_release:menu.visible=True
-				on_release:menu.disabled=False
-		
-			Button:
-				text: "Wroc"
-				background_color: (1.0, 0.0, 0.0, 0.5)
-				size_hint:0.2,0.1
-				pos_hint:{"top":0.65,"left":1}
-				on_release:box.visible=False
-				on_release:box.disabled=True
-				on_release:menu.visible=True
-				on_release:menu.disabled=False
-			
-			Label:
-				text:"Nazwa Uzytkownika"
-				size_hint:0.2,0.1
-				font_size:15
-				background_color: (1.0, 0.0, 0.0, 1)
-				pos_hint:{"left":1,"top":1}
-				
-			AsyncImage
-                source: 'https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png'
-				
-     
-    Button:
-		id:menu
-		background_color: (0.5, 0.5, 0.5,0)
-		visible: True
-		opacity: 1 if self.visible else 0
-		font_size: 5
-		size_hint: 0.05,0.05
-		pos_hint: {"left":1, "top":1}
-		on_release: box.visible= True
-		on_release: box.disabled=False
-		on_release:menu.visible=False
-		on_release:menu.disabled=True
-		Image: 
-			source: "opt.png"
-			y: self.parent.y
-            x: self.parent.x
-			width: self.parent.width
-			height: self.parent.height
-			
-		
-			
+				background_color:root.color
 #############################################		
 			
 ################################################		
 <Mapa>:
 	name: "mapa"
+	color: 0.596,0.9843,0.596,1
 	canvas:
         Rectangle:
             source: 'beach.jpg'
@@ -100,145 +53,59 @@ ScreenManagement:
             size: self.size
 	BoxLayout:
 		id: box
-        visible: False
-		opacity: 1 if self.visible else 0
 		size: root.size
+
 		
 		FloatLayout:
-			Button:
-				background_color: 1, 1, 1, 0.7
-				size_hint:0.2,1
-				pos_hint:{"left":1}
-			Button:
+		    Button:
 				text: "Strona\nGowna"
-				size_hint:0.2,0.1
-				pos_hint:{"left":1,"top":0.85}
+				size_hint:0.34,0.06
+				pos_hint:{"x":0,"y":0}
 				on_release: app.root.current= "main"
-				on_release:box.visible=False
-				on_release:box.disabled=True
-				on_release:menu.visible=True
-				on_release:menu.disabled=False
+				background_color:root.color
+			Button:
+				text: "Mapa"
+				size_hint:0.34,0.06
+				pos_hint:{"x":0.33,"y":0}
+				on_release: app.root.current= "mapa"
+				background_color:root.color
 			Button:
 				text: "Lista"
-				size_hint:0.2,0.1
-				pos_hint:{"left":1,"top":0.75}
+				size_hint:0.34,0.06
+				pos_hint:{"x":0.66,"y":0}
 				on_release: app.root.current= "lista"
-				on_release:box.visible=False
-				on_release:box.disabled=True
-				on_release:menu.visible=True
-				on_release:menu.disabled=False
-		
-			Button:
-				text: "Wroc"
-				background_color: (1.0, 0.0, 0.0, 0.5)
-				size_hint:0.2,0.1
-				pos_hint:{"top":0.65,"left":1}
-				on_release:box.visible=False
-				on_release:box.disabled=True
-				on_release:menu.visible=True
-				on_release:menu.disabled=False
-			
-			Label:
-				text:"Nazwa Uzytkownika"
-				size_hint:0.2,0.1
-				font_size:15
-				background_color: (1.0, 0.0, 0.0, 1)
-				pos_hint:{"left":1,"top":1}
+				background_color:root.color
 
-				
-     
-    Button:
-		id:menu
-		background_color: (0.5, 0.5, 0.5,0)
-		visible: True
-		opacity: 1 if self.visible else 0
-		font_size: 5
-		size_hint: 0.05,0.05
-		pos_hint: {"left":1, "top":1}
-		on_release: box.visible= True
-		on_release: box.disabled=False
-		on_release:menu.visible=False
-		on_release:menu.disabled=True
-		Image: 
-			source: "opt.png"
-			y: self.parent.y
-            x: self.parent.x
-			width: self.parent.width
-			height: self.parent.height
 #############################
 <Lista>
     name: "lista"
+    color: 0.596,0.9843,0.596,1
 	canvas:
         Rectangle:
             source: 'lake.jpg'
             pos: self.pos
             size: self.size
+
 	BoxLayout:
 		id: box
-        visible: False
-		opacity: 1 if self.visible else 0
 		size: root.size
-		
 		FloatLayout:
-			Button:
-				background_color: 1, 1, 1, 0.7
-				size_hint:0.2,1
-				pos_hint:{"left":1}
-			Button:
+		    Button:
 				text: "Strona\nGowna"
-				size_hint:0.2,0.1
-				pos_hint:{"left":1,"top":0.85}
+				size_hint:0.34,0.06
+				pos_hint:{"x":0,"y":0}
 				on_release: app.root.current= "main"
-				on_release:box.visible=False
-				on_release:box.disabled=True
-				on_release:menu.visible=True
-				on_release:menu.disabled=False
+				background_color:root.color
 			Button:
 				text: "Mapa"
-				size_hint:0.2,0.1
-				pos_hint:{"left":1,"top":0.75}
+				size_hint:0.34,0.06
+				pos_hint:{"x":0.33,"y":0}
 				on_release: app.root.current= "mapa"
-				on_release:box.visible=False
-				on_release:box.disabled=True
-				on_release:menu.visible=True
-				on_release:menu.disabled=False
-		
+				background_color:root.color
 			Button:
-				text: "Wroc"
-				background_color: (1.0, 0.0, 0.0, 0.5)
-				size_hint:0.2,0.1
-				pos_hint:{"top":0.65,"left":1}
-				on_release:box.visible=False
-				on_release:box.disabled=True
-				on_release:menu.visible=True
-				on_release:menu.disabled=False
-			
-			Label:
-				text:"Nazwa Uzytkownika"
-				size_hint:0.2,0.1
-				font_size:15
-				background_color: (1.0, 0.0, 0.0, 1)
-				pos_hint:{"left":1,"top":1}
-
-				
-     
-    Button:
-		id:menu
-		background_color: (0.5, 0.5, 0.5,0)
-		visible: True
-		opacity: 1 if self.visible else 0
-		font_size: 5
-		size_hint: 0.05,0.05
-		pos_hint: {"left":1, "top":1}
-		on_release: box.visible= True
-		on_release: box.disabled=False
-		on_release:menu.visible=False
-		on_release:menu.disabled=True
-		Image: 
-			source: "opt.png"
-			y: self.parent.y
-            x: self.parent.x
-			width: self.parent.width
-			height: self.parent.height
-
-
+				text: "Lista"
+				size_hint:0.34,0.06
+				pos_hint:{"x":0.66,"y":0}
+				on_release: app.root.current= "lista"
+				background_color:root.color
+###############
