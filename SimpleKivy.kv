@@ -12,7 +12,7 @@ ScreenManagement:
 <MainScreen>:
 	canvas:
         Rectangle:
-            source: 'ok.jpg'
+            source: 'xxx.jpg'
             pos: self.pos
             size: self.size
 	name:"main"
@@ -20,6 +20,7 @@ ScreenManagement:
 	BoxLayout:
 		id: box
 		size: root.size
+
 		
 		FloatLayout:
 		    Button:
@@ -40,6 +41,62 @@ ScreenManagement:
 				pos_hint:{"x":0.66,"y":0}
 				on_release: app.root.current= "lista"
 				background_color:root.color
+	BoxLayout:
+
+	    Button:
+			text: "TWOJ SENSOR WS 2,5-10 Z SENSORA"
+			background_color: 0,0,0,1
+			size_hint:0.1,0.3
+			pos_hint:{"left":1,"top":0.95}
+			on_release: app.root.current= "main"
+	BoxLayout:
+
+	    Button:
+			text: "Wykres/Hisotia poziomu zanieczyszczen w skali czasu"
+			background_color: 0,0,0,1
+			size_hint:0.1,0.3
+			pos_hint:{"left":1,"top":0.60}
+			on_release: app.root.current= "main"
+	BoxLayout:
+
+	    Button:
+			text: "Year"
+			background_color:root.color
+			size_hint:0.34,0.04
+			pos_hint:{"left":1,"top":0.303}
+			on_release: app.root.current= "main"
+		Button:
+			text: "3 Month"
+			background_color:root.color
+			size_hint:0.34,0.04
+			pos_hint:{"left":1,"top":0.303}
+			on_release: app.root.current= "main"
+		Button:
+			text: "Month"
+			background_color:root.color
+			size_hint:0.34,0.04
+			pos_hint:{"left":0.9,"top":0.303}
+			on_release: app.root.current= "main"
+		Button:
+			text: "Week"
+			background_color:root.color
+			size_hint:0.34,0.04
+			pos_hint:{"left":1,"top":0.303}
+			on_release: app.root.current= "main"
+		Button:
+			text: "Today"
+			background_color:root.color
+			size_hint:0.34,0.04
+			pos_hint:{"left":1,"top":0.303}
+			on_release: app.root.current= "main"
+
+
+
+
+
+
+
+
 #############################################		
 			
 ################################################		
