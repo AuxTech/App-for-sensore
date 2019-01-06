@@ -4,8 +4,8 @@
 ScreenManagement:
 	transition: FadeTransition()
 	MainScreen:
-	AnotherScreen:
-	SecoundScreen:
+	Mapa:
+	Lista:
 #####################################	
 
 #############################################
@@ -31,16 +31,16 @@ ScreenManagement:
 				text: "Mapa"
 				size_hint:0.2,0.1
 				pos_hint:{"left":1,"top":0.85}
-				on_release: app.root.current= "other"
+				on_release: app.root.current= "mapa"
 				on_release:box.visible=False
 				on_release:box.disabled=True
 				on_release:menu.visible=True
 				on_release:menu.disabled=False
 			Button:
-				text: "Czecia"
+				text: "Lista"
 				size_hint:0.2,0.1
 				pos_hint:{"left":1,"top":0.75}
-				on_release: app.root.current= "another"
+				on_release: app.root.current= "lista"
 				on_release:box.visible=False
 				on_release:box.disabled=True
 				on_release:menu.visible=True
@@ -91,8 +91,8 @@ ScreenManagement:
 #############################################		
 			
 ################################################		
-<AnotherScreen>:
-	name: "other"
+<Mapa>:
+	name: "mapa"
 	canvas:
         Rectangle:
             source: 'beach.jpg'
@@ -119,10 +119,10 @@ ScreenManagement:
 				on_release:menu.visible=True
 				on_release:menu.disabled=False
 			Button:
-				text: "Czecia"
+				text: "Lista"
 				size_hint:0.2,0.1
 				pos_hint:{"left":1,"top":0.75}
-				on_release: app.root.current= "another"
+				on_release: app.root.current= "lista"
 				on_release:box.visible=False
 				on_release:box.disabled=True
 				on_release:menu.visible=True
@@ -166,8 +166,8 @@ ScreenManagement:
 			width: self.parent.width
 			height: self.parent.height
 #############################
-<SecoundScreen>
-    name: "another"
+<Lista>
+    name: "lista"
 	canvas:
         Rectangle:
             source: 'lake.jpg'
@@ -197,7 +197,7 @@ ScreenManagement:
 				text: "Mapa"
 				size_hint:0.2,0.1
 				pos_hint:{"left":1,"top":0.75}
-				on_release: app.root.current= "other"
+				on_release: app.root.current= "mapa"
 				on_release:box.visible=False
 				on_release:box.disabled=True
 				on_release:menu.visible=True
