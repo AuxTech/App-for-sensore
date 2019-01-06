@@ -6,9 +6,9 @@ from kivy.uix.screenmanager import ScreenManager,Screen, FadeTransition
 
 class MainScreen(Screen):
     pass
-class AnotherScreen(Screen):
+class Mapa(Screen):
     pass
-class SecoundScreen(Screen):
+class Lista(Screen):
     pass
 
 class ScreenManagement(ScreenManager):
