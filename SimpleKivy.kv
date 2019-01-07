@@ -48,13 +48,12 @@ ScreenManagement:
 	color: 0.596,0.9843,0.596,1
 	canvas:
         Rectangle:
-            source: 'beach.jpg'
+            source: 'mapa.png'
             pos: self.pos
             size: self.size
 	BoxLayout:
 		id: box
 		size: root.size
-
 		
 		FloatLayout:
 		    Button:
@@ -75,6 +74,148 @@ ScreenManagement:
 				pos_hint:{"x":0.66,"y":0}
 				on_release: app.root.current= "lista"
 				background_color:root.color
+
+    Label:
+        id:dzielnica
+        visible:False
+        opacity: 1 if self.visible else 0
+        text:"Moja Dzielnica"
+        color: 0,0,0,1
+        font_size:50
+    Label:
+        id:lok
+        visible:False
+        opacity: 1 if self.visible else 0
+        text:"Moja Lokalizacja"
+        color: 0,0,0,1
+        font_size:50
+    Label:
+        id:wsz
+        visible:False
+        opacity: 1 if self.visible else 0
+        text:"Wszystkie"
+        color: 0,0,0,1
+        font_size:50
+
+    Button:
+        text:"Cofnij"
+        id:wroc
+        visible:False
+        opacity: 1 if self.visible else 0
+        pos_hint:{"right":1,"top":1}
+        size_hint:0.1,0.1
+        background_color: 1, 1, 1, 1
+        on_release:dzielnica.visible=False
+        on_release:lok.visible=False
+        on_release:wsz.visible=False
+        on_release:wroc.visible=False
+        on_release:wroc.disable=True
+        on_release: DzielB.disable=False
+        on_release: DzielB.visible=True
+        on_release: LokB.disable=False
+        on_release: LokB.visible=True
+        on_release: Wszystkie.disable=False
+        on_release: Wszystkie.visible=True
+
+	BoxLayout:
+		id: box
+		size: root.size
+
+
+		FloatLayout:
+
+            Button:
+                id:LokB
+                text:"LokB"
+                visible:True
+                opacity: 1 if self.visible else 0
+                size_hint:0.05,0.05
+                pos_hint:{"left":0,"top":0.8}
+                background_color: 1, 1, 1, 0
+                on_release: lok.visible=True
+                on_release: wroc.visible=True
+                on_release: wroc.disable=False
+                on_release: LokB.visible=False
+                on_release: LokB.disible=True
+                on_release: DzielB.visible=False
+                on_release: DzielB.disible=True
+                on_release: Wszystkie.visible=False
+                on_release: Wszystkie.disible=True
+                StackLayout:
+                    pos: self.parent.pos
+                    size: self.parent.size
+                    orientation: 'lr-tb'
+                    Image:
+                        source: "but.png"
+			            y: self.parent.y
+                        x: self.parent.x
+			            width: self.parent.width
+			            height: self.parent.height
+			        Label:
+			            y: self.parent.y
+                        x: self.parent.x
+
+            Button:
+		        id:DzielB
+		        text:"DzielB"
+		        visible:True
+                opacity: 1 if self.visible else 0
+		        size_hint:0.05,0.05
+                pos_hint:{"left":0,"top":0.5}
+                background_color: 1, 1, 1, 0
+                on_release: dzielnica.visible=True
+                on_release: wroc.visible=True
+                on_release: wroc.disable=False
+                on_release: LokB.visible=False
+                on_release: LokB.disible=True
+                on_release: DzielB.visible=False
+                on_release: DzielB.disible=True
+                on_release: Wszystkie.visible=False
+                on_release: Wszystkie.disible=True
+                StackLayout:
+                    pos: self.parent.pos
+                    size: self.parent.size
+                    orientation: 'lr-tb'
+                    Image:
+                        source: "but.png"
+			            y: self.parent.y
+                        x: self.parent.x
+			            width: self.parent.width
+			            height: self.parent.height
+			        Label:
+			            y: self.parent.y
+                        x: self.parent.x
+
+            Button:
+		        id:Wszystkie
+		        text:"Wszystkie"
+		        visible:True
+                opacity: 1 if self.visible else 0
+		        size_hint:0.05,0.05
+                pos_hint:{"left":0,"top":0.2}
+                background_color: 1, 1, 1, 0
+                on_release: wsz.visible=True
+                on_release: wroc.visible=True
+                on_release: wroc.disable=False
+                on_release: LokB.visible=False
+                on_release: LokB.disible=True
+                on_release: DzielB.visible=False
+                on_release: DzielB.disible=True
+                on_release: Wszystkie.visible=False
+                on_release: Wszystkie.disible=True
+                StackLayout:
+                    pos: self.parent.pos
+                    size: self.parent.size
+                    orientation: 'lr-tb'
+                    Image:
+                        source: "but.png"
+			            y: self.parent.y
+                        x: self.parent.x
+			            width: self.parent.width
+			            height: self.parent.height
+			        Label:
+			            y: self.parent.y
+                        x: self.parent.x
 
 #############################
 <Lista>
