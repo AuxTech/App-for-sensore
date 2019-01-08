@@ -3,8 +3,8 @@
 
 
 #####################################	
-
-#############################################
+# HOME PAGE
+#####################################
 <MainScreen>:
 	canvas:
         Rectangle:
@@ -16,27 +16,45 @@
 	BoxLayout:
 		id: box
 		size: root.size
-
-		
+##################### Początek buttonow nawigacyjnych ####################
 		FloatLayout:
 		    Button:
-				text: "Strona\nGowna"
-				size_hint:0.34,0.08
-				pos_hint:{"x":0,"y":0}
-				on_release: app.root.current= "main"
-				background_color:root.color
+		        on_release: app.root.current= "main"
+
+		        background_normal: ''
+                background_color:root.color
+                size_hint: .334, .08
+				pos_hint: {"left": 1, "bottom": 0}
+				Image:
+                    source: 'icons/home.png'
+                    center: self.parent.center
+                    size: 30,30
+                    allow_stretch: True
 			Button:
-				text: "Mapa"
-				size_hint:0.34,0.08
-				pos_hint:{"x":0.33,"y":0}
-				on_release: app.root.current= "mapa"
-				background_color:root.color
+		        on_release: app.root.current= "mapa"
+
+		        background_normal: ''
+                background_color:root.color
+                size_hint: .334, .08
+				pos_hint: {"center_x": .5, "bottom": 0}
+				Image:
+                    source: 'icons/map_icon.png'
+                    center: self.parent.center
+                    size: 30,30
+                    allow_stretch: True
 			Button:
-				text: "Lista"
-				size_hint:0.34,0.08
-				pos_hint:{"x":0.66,"y":0}
-				on_release: app.root.current= "lista"
-				background_color:root.color
+		        on_release: app.root.current= "lista"
+
+		        background_normal: ''
+                background_color:root.color
+                size_hint: .334, .08
+				pos_hint: {"right": 1, "bottom": 0}
+				Image:
+                    source: 'icons/list.png'
+                    center: self.parent.center
+                    size: 30,30
+                    allow_stretch: True
+##################### Koniec buttonow nawigacyjnych ####################
 	BoxLayout:
 
 	    Button:
@@ -57,45 +75,47 @@
 
 	    Button:
 			text: "Year"
+			color:0,0,0,1
+			background_normal: ''
 			background_color:root.color
 			size_hint:0.34,0.06
 			pos_hint:{"left":1,"top":0.403}
 			on_release: app.root.current= "main"
 		Button:
 			text: "3 Month"
+			color:0,0,0,1
+			background_normal: ''
 			background_color:root.color
 			size_hint:0.34,0.06
 			pos_hint:{"left":1,"top":0.403}
 			on_release: app.root.current= "main"
 		Button:
 			text: "Month"
+			color:0,0,0,1
+			background_normal: ''
 			background_color:root.color
 			size_hint:0.34,0.06
 			pos_hint:{"left":0.9,"top":0.403}
 			on_release: app.root.current= "main"
 		Button:
 			text: "Week"
+			color:0,0,0,1
+			background_normal: ''
 			background_color:root.color
 			size_hint:0.34,0.06
 			pos_hint:{"left":1,"top":0.403}
 			on_release: app.root.current= "main"
 		Button:
 			text: "Today"
+			color:0,0,0,1
+			background_normal: ''
 			background_color:root.color
 			size_hint:0.34,0.06
 			pos_hint:{"left":1,"top":0.403}
 			on_release: app.root.current= "main"
-
-
-
-
-
-
-
-
-#############################################		
-			
-################################################		
+#####################################
+# MAP PAGE
+#####################################
 <Mapa>:
 	name: "mapa"
 	color: 0.596,0.9843,0.596,1
@@ -107,27 +127,45 @@
 	BoxLayout:
 		id: box
 		size: root.size
-		
+##################### Początek buttonow nawigacyjnych ####################
 		FloatLayout:
 		    Button:
-				text: "Strona\nGowna"
-				size_hint:0.34,0.08
-				pos_hint:{"x":0,"y":0}
-				on_release: app.root.current= "main"
-				background_color:root.color
-			Button:
-				text: "Mapa"
-				size_hint:0.34,0.08
-				pos_hint:{"x":0.33,"y":0}
-				on_release: app.root.current= "mapa"
-				background_color:root.color
-			Button:
-				text: "Lista"
-				size_hint:0.34,0.08
-				pos_hint:{"x":0.66,"y":0}
-				on_release: app.root.current= "lista"
-				background_color:root.color
+		        on_release: app.root.current= "main"
 
+		        background_normal: ''
+                background_color:root.color
+                size_hint: .334, .08
+				pos_hint: {"left": 1, "bottom": 0}
+				Image:
+                    source: 'icons/home.png'
+                    center: self.parent.center
+                    size: 30,30
+                    allow_stretch: True
+			Button:
+		        on_release: app.root.current= "mapa"
+
+		        background_normal: ''
+                background_color:root.color
+                size_hint: .334, .08
+				pos_hint: {"center_x": .5, "bottom": 0}
+				Image:
+                    source: 'icons/map_icon.png'
+                    center: self.parent.center
+                    size: 30,30
+                    allow_stretch: True
+			Button:
+		        on_release: app.root.current= "lista"
+
+		        background_normal: ''
+                background_color:root.color
+                size_hint: .334, .08
+				pos_hint: {"right": 1, "bottom": 0}
+				Image:
+                    source: 'icons/list.png'
+                    center: self.parent.center
+                    size: 30,30
+                    allow_stretch: True
+##################### Koniec buttonow nawigacyjnych ####################
     Label:
         id:dzielnica
         visible:False
@@ -269,48 +307,61 @@
 			        Label:
 			            y: self.parent.y
                         x: self.parent.x
-
-#############################
+#####################################
+# LIST PAGE
+#####################################
 <Lista>
     rv: rv # expose the widget
     name: "lista"
     color: 0.596,0.9843,0.596,1
-	canvas.before:
-        Color:
-            rgba: (.0, 0.9, .1, .3)
-        Rectangle:
-            pos: self.pos
-            size: self.size
-    RecycleView:
+
+    RecycleView: # Tutaj zdefiniowany jest widok listy
         id: rv
         viewclass: 'Button'
         RecycleBoxLayout:
+            default_size: None, dp(46)
             size_hint:1,0.06
             default_size_hint: 1, None
             size_hint_y: None
             height: self.minimum_height
             orientation: 'vertical'
 
-	BoxLayout:
-		id: box
-		size: root.size
-		FloatLayout:
-		    Button:
-				text: "Strona\nGowna"
-				size_hint:0.34,0.08
-				pos_hint:{"x":0,"y":0}
-				on_release: app.root.current= "main"
-				background_color:root.color
-			Button:
-				text: "Mapa"
-				size_hint:0.34,0.08
-				pos_hint:{"x":0.33,"y":0}
-				on_release: app.root.current= "mapa"
-				background_color:root.color
-			Button:
-				text: "Lista"
-				size_hint:0.34,0.08
-				pos_hint:{"x":0.66,"y":0}
-				on_release: app.root.current= "lista"
-				background_color:root.color
-###############
+##################### Początek buttonow nawigacyjnych ####################
+    FloatLayout:
+	    Button:
+	        on_release: app.root.current= "main"
+
+	        background_normal: ''
+            background_color:root.color
+            size_hint: .334, .08
+    		pos_hint: {"left": 1, "bottom": 0}
+			Image:
+                source: 'icons/home.png'
+                center: self.parent.center
+                size: 30,30
+                allow_stretch: True
+		Button:
+	        on_release: app.root.current= "mapa"
+
+	        background_normal: ''
+            background_color:root.color
+            size_hint: .334, .08
+	    	pos_hint: {"center_x": .5, "bottom": 0}
+			Image:
+                source: 'icons/map_icon.png'
+                center: self.parent.center
+                size: 30,30
+                allow_stretch: True
+		Button:
+		    on_release: app.root.current= "lista"
+
+		    background_normal: ''
+            background_color:root.color
+            size_hint: .334, .08
+		    pos_hint: {"right": 1, "bottom": 0}
+			Image:
+                source: 'icons/list.png'
+                center: self.parent.center
+                size: 30,30
+                allow_stretch: True
+##################### Koniec buttonow nawigacyjnych ####################
