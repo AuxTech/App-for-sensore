@@ -5,9 +5,7 @@ from kivy.lang import Builder
 from kivy.config import Config
 from kivy.uix.screenmanager import ScreenManager,Screen, NoTransition
 
-
 czytniki=open("czytniki.txt","r") #czytanie listy czytnikow z pliku
-
 
 class MainScreen(Screen):
     pass
